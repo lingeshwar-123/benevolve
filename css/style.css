@@ -15,6 +15,7 @@ body {
     color: #401c73;
     font-weight: 700;  
 }
+
 /* common buttons */
 .primary-button{
   background-color: #401c73;
@@ -580,7 +581,7 @@ body {
   background-position: 100% 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 460px;
+  height: 410px;
   position: relative;
 }
 
@@ -867,7 +868,14 @@ body {
 }
 
 
-
+@media only screen and (max-width: 1400px) and (min-width: 991px)  {
+  .w-22{
+  width: 22%;
+ }
+ .w-56{
+   width: 56%;
+ }
+}
 
 
 
