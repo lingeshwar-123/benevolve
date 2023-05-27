@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Benevolve</title>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -11,8 +15,12 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="./css/style.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   </head>
   <body>
+    <div class="loading">
+   
+    </div>
     <div class="dashboard-container">
       <div class="container custom-container">
         <div class="row">
@@ -22,9 +30,15 @@
           <div class="col-md-6 w-56">
             <div class="main">
               <!-- Actual search box -->
-              <div class="form-group has-search">
+              <div id="search-dropdown" class="form-group has-search position-relative">
                 <span class="fa fa-search form-control-feedback"></span>
                 <input type="text" class="form-control" placeholder="Search">
+                <div>
+                <div id="search-dropdown-div" class="search-dropdown">
+                  <button style="position: absolute;right: 8px;cursor: pointer;" type="button" class="btn-close" id="close" disabled aria-label="Close"></button>
+                  Search droudown 
+                </div>
+              </div>
               </div>
             </div>
             <div class="profile-menu">
@@ -358,131 +372,131 @@
           <div class="row">
             <div class="col-md-6 schedule-calendar-left">
               <div class="card-wrapper">
-              <div class="benlove-container">
-                <div class="social-calendar-container">
-                  <p class="heading-title">Schedule calender</p>
-                </div>
-                <ul class="nav nav-pills mb-3 b-bottom pb-4" id="pills-tab" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="pills-home-tab44" data-bs-toggle="pill"
-                      data-bs-target="#pills-home44" type="button" role="tab" aria-controls="pills-home44"
-                      aria-selected="true">Meetings</button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-profile-tab55" data-bs-toggle="pill"
-                      data-bs-target="#pills-profile55" type="button" role="tab" aria-controls="pills-profile"
-                      aria-selected="false">Upcoming holidays</button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-contact-tab66" data-bs-toggle="pill"
-                      data-bs-target="#pills-contact66" type="button" role="tab" aria-controls="pills-contact"
-                      aria-selected="false">Events</button>
-                  </li>
-                </ul>
-                <div class="tab-content" id="pills-tabContent">
-                  <div class="tab-pane fade show active" id="pills-home44" role="tabpanel"
-                    aria-labelledby="pills-home-tab">
-                    <div class="schedule-calendar-div">
-                      <div class="date-flex">
-                        <p class="date">06</p>
-                        <div class="date-div">
-                          <p class="month">April</p>
-                          <p class="month">Saturday</p>
+                <div class="benlove-container">
+                  <div class="social-calendar-container">
+                    <p class="heading-title">Schedule calender</p>
+                  </div>
+                  <ul class="nav nav-pills mb-3 b-bottom pb-4" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="pills-home-tab44" data-bs-toggle="pill"
+                        data-bs-target="#pills-home44" type="button" role="tab" aria-controls="pills-home44"
+                        aria-selected="true">Meetings</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="pills-profile-tab55" data-bs-toggle="pill"
+                        data-bs-target="#pills-profile55" type="button" role="tab" aria-controls="pills-profile"
+                        aria-selected="false">Upcoming holidays</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="pills-contact-tab66" data-bs-toggle="pill"
+                        data-bs-target="#pills-contact66" type="button" role="tab" aria-controls="pills-contact"
+                        aria-selected="false">Events</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home44" role="tabpanel"
+                      aria-labelledby="pills-home-tab">
+                      <div class="schedule-calendar-div">
+                        <div class="date-flex">
+                          <p class="date">06</p>
+                          <div class="date-div">
+                            <p class="month">April</p>
+                            <p class="month">Saturday</p>
+                          </div>
+                        </div>
+                        <div class="product-launch">
+                          <p class="product-launch-title">New product lauch</p>
+                          <p class="product-launch-person">By: Rajesh kapoor</p>
+                          <div class="clock-div">
+                            <img src="./assets/icons/Clock.png" width="25" height="25" />
+                            <p class="product-launch-time">10 am to 12 pm</p>
+                          </div>
+                        </div>
+                        <div class="next-image-div">
+                          <img src="./assets/icons/next_click.png" width="28" height="30" />
                         </div>
                       </div>
-                      <div class="product-launch">
-                        <p class="product-launch-title">New product lauch</p>
-                        <p class="product-launch-person">By: Rajesh kapoor</p>
-                        <div class="clock-div">
-                          <img src="./assets/icons/Clock.png" width="25" height="25" />
-                          <p class="product-launch-time">10 am to 12 pm</p>
+                    </div>
+                    <div class="tab-pane fade show active" id="pills-home55" role="tabpanel"
+                      aria-labelledby="pills-home-tab">
+                      <div style="margin-bottom:20px; margin-top:20px"></div>
+                      <div class="schedule-calendar-div">
+                        <div class="date-flex">
+                          <p class="date">06</p>
+                          <div class="date-div">
+                            <p class="month">April</p>
+                            <p class="month">Saturday</p>
+                          </div>
+                        </div>
+                        <div class="product-launch">
+                          <p class="product-launch-title">New product lauch</p>
+                          <p class="product-launch-person">By: Rajesh kapoor</p>
+                          <div class="clock-div">
+                            <img src="./assets/icons/Clock.png" width="25" height="25" />
+                            <p class="product-launch-time">10 am to 12 pm</p>
+                          </div>
+                        </div>
+                        <div class="next-image-div">
+                          <img src="./assets/icons/next_click.png" width="28" height="30" />
                         </div>
                       </div>
-                      <div class="next-image-div">
-                        <img src="./assets/icons/next_click.png" width="28" height="30" />
+                    </div>
+                    <div class="tab-pane fade show active" id="pills-home66" role="tabpanel"
+                      aria-labelledby="pills-home-tab">
+                      <div style="margin-bottom:20px; margin-top:20px"></div>
+                      <div class="schedule-calendar-div">
+                        <div class="date-flex">
+                          <p class="date">06</p>
+                          <div class="date-div">
+                            <p class="month">April</p>
+                            <p class="month">Saturday</p>
+                          </div>
+                        </div>
+                        <div class="product-launch">
+                          <p class="product-launch-title">New product lauch</p>
+                          <p class="product-launch-person">By: Rajesh kapoor</p>
+                          <div class="clock-div">
+                            <img src="./assets/icons/Clock.png" width="25" height="25" />
+                            <p class="product-launch-time">10 am to 12 pm</p>
+                          </div>
+                        </div>
+                        <div class="next-image-div">
+                          <img src="./assets/icons/next_click.png" width="28" height="30" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                      aria-labelledby="pills-home-tab">
+                      <div style="margin-bottom:20px; margin-top:20px"></div>
+                      <div class="schedule-calendar-div">
+                        <div class="date-flex">
+                          <p class="date">06</p>
+                          <div class="date-div">
+                            <p class="month">April</p>
+                            <p class="month">Saturday</p>
+                          </div>
+                        </div>
+                        <div class="product-launch">
+                          <p class="product-launch-title">New product lauch</p>
+                          <p class="product-launch-person">By: Rajesh kapoor</p>
+                          <div class="clock-div">
+                            <img src="./assets/icons/Clock.png" width="25" height="25" />
+                            <p class="product-launch-time">10 am to 12 pm</p>
+                          </div>
+                        </div>
+                        <div class="next-image-div">
+                          <img src="./assets/icons/next_click.png" width="28" height="30" />
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="tab-pane fade show active" id="pills-home55" role="tabpanel"
-                    aria-labelledby="pills-home-tab">
-                    <div style="margin-bottom:20px; margin-top:20px"></div>
-                    <div class="schedule-calendar-div">
-                      <div class="date-flex">
-                        <p class="date">06</p>
-                        <div class="date-div">
-                          <p class="month">April</p>
-                          <p class="month">Saturday</p>
-                        </div>
-                      </div>
-                      <div class="product-launch">
-                        <p class="product-launch-title">New product lauch</p>
-                        <p class="product-launch-person">By: Rajesh kapoor</p>
-                        <div class="clock-div">
-                          <img src="./assets/icons/Clock.png" width="25" height="25" />
-                          <p class="product-launch-time">10 am to 12 pm</p>
-                        </div>
-                      </div>
-                      <div class="next-image-div">
-                        <img src="./assets/icons/next_click.png" width="28" height="30" />
-                      </div>
-                    </div>
+                  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    fdsfdf
                   </div>
-                  <div class="tab-pane fade show active" id="pills-home66" role="tabpanel"
-                    aria-labelledby="pills-home-tab">
-                    <div style="margin-bottom:20px; margin-top:20px"></div>
-                    <div class="schedule-calendar-div">
-                      <div class="date-flex">
-                        <p class="date">06</p>
-                        <div class="date-div">
-                          <p class="month">April</p>
-                          <p class="month">Saturday</p>
-                        </div>
-                      </div>
-                      <div class="product-launch">
-                        <p class="product-launch-title">New product lauch</p>
-                        <p class="product-launch-person">By: Rajesh kapoor</p>
-                        <div class="clock-div">
-                          <img src="./assets/icons/Clock.png" width="25" height="25" />
-                          <p class="product-launch-time">10 am to 12 pm</p>
-                        </div>
-                      </div>
-                      <div class="next-image-div">
-                        <img src="./assets/icons/next_click.png" width="28" height="30" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-                    aria-labelledby="pills-home-tab">
-                    <div style="margin-bottom:20px; margin-top:20px"></div>
-                    <div class="schedule-calendar-div">
-                      <div class="date-flex">
-                        <p class="date">06</p>
-                        <div class="date-div">
-                          <p class="month">April</p>
-                          <p class="month">Saturday</p>
-                        </div>
-                      </div>
-                      <div class="product-launch">
-                        <p class="product-launch-title">New product lauch</p>
-                        <p class="product-launch-person">By: Rajesh kapoor</p>
-                        <div class="clock-div">
-                          <img src="./assets/icons/Clock.png" width="25" height="25" />
-                          <p class="product-launch-time">10 am to 12 pm</p>
-                        </div>
-                      </div>
-                      <div class="next-image-div">
-                        <img src="./assets/icons/next_click.png" width="28" height="30" />
-                      </div>
-                    </div>
+                  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    ...
                   </div>
                 </div>
-                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                  fdsfdf
-                </div>
-                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                  ...
-                </div>
-              </div>
               </div>
             </div>
             <div class="col-md-6">
@@ -571,619 +585,838 @@
         </div>
       </div>
       <div class="tab-pane fade" id="app" role="tabpanel"
-        aria-labelledby="app-tab" style="text-align: center;
-        font-size: 30px;">
-              <div class="container apps-container pb-0">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="apps-deatils-tab">
-                      <p class="apps-deatils-title">Get accessment of your all apps</p>
-                      <p class="apps-deatils-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of </p>
-                    </div>
-                  </div>
-                  <div class="col-md-6 p-0 text-end">
-                    <div style="padding-top: 25px">
-                      <img src="./assets/images/apps_banner.png" class="app-banner"/>
-                    </div>
-                   
-                  </div>
+        aria-labelledby="app-tab">
+        <div class="container apps-container pb-0">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="apps-deatils-tab">
+                <p class="apps-deatils-title">Get accessment of your all apps</p>
+                <p class="apps-deatils-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of </p>
+              </div>
+            </div>
+            <div class="col-md-6 p-0 text-end">
+              <div style="padding-top: 25px">
+                <img src="./assets/images/apps_banner.png" class="app-banner"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container apps-container app-tab-main">
+          <div class="app-div">
+            <p class="heading-title">Most used apps</p>
+          </div>
+          <div class="row m-0">
+            <div class="col-md-3">
+              <div class="company-logo-container">
+                <div class="company-logo">
+                  <img src="./assets/images/belove-logo.png" width="185" height="51" />
                 </div>
               </div>
-      
-      
-              <div class="container apps-container app-tab-main">
-                <div class="app-div">
-                  <p class="heading-title">Most used apps</p>
-                </div>
-                <div class="row m-0">
-                  <div class="col-md-3">
-                    <div class="company-logo-container">
-                      <div class="company-logo">
-                        <img src="./assets/images/belove-logo.png" width="185" height="51" />
-                      </div>
-                    </div>
-                    <div class="app-logo-div">
-                      <p class="company-details">The most intuitive and flexible benefits engagement system for your
-                        employees
-                      </p>
-                      <div class="company-desc">
-                        <p class="know-yours">Know your benefits</p>
-                        <img src="./assets/icons/next_click.png" width="28" height="30" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="company-logo-container">
-                      <div class="company-logo">
-                        <img src="./assets/images/udemy.png" width="121" height="43" />
-                      </div>
-                    </div>
-                    <div class="app-logo-div">
-                      <p class="company-details">Udemy is a platform that allows instructors to build online courses on
-                        their preferred topics
-                      </p>
-                      <div class="company-desc">
-                        <p class="know-yours">Want to learn</p>
-                        <img src="./assets/icons/next_click.png" width="28" height="30" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="company-logo-container">
-                      <div class="company-logo">
-                        <img src="./assets/images/udemy.png" width="121" height="43" />
-                      </div>
-                    </div>
-                    <div class="app-logo-div">
-                      <p class="company-details">The most intuitive and flexible benefits engagement system for your
-                        employees
-                      </p>
-                      <div class="company-desc">
-                        <p class="know-yours">Machine learning A-Z</p>
-                        <img src="./assets/icons/next_click.png" width="28" height="30" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="company-logo-container">
-                      <div class="company-logo">
-                        <img src="./assets/images/gmail.png" width="165" height="43" />
-                      </div>
-                    </div>
-                    <div class="app-logo-div">
-                      <p class="company-details">The most intuitive and flexible benefits engagement system for your
-                        employees
-                      </p>
-                      <div class="company-desc">
-                        <p class="know-yours">Check your mail</p>
-                        <img src="./assets/icons/next_click.png" width="28" height="30" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row ms-0 me-0 mt-5">
-                  <div class="col-md-3">
-                    <div class="company-logo-container">
-                      <div class="company-logo">
-                        <img src="./assets/images/belove-logo.png" width="185" height="51" />
-                      </div>
-                    </div>
-                    <div class="app-logo-div">
-                      <p class="company-details">The most intuitive and flexible benefits engagement system for your
-                        employees
-                      </p>
-                      <div class="company-desc">
-                        <p class="know-yours">Check Success factor</p>
-                        <img src="./assets/icons/next_click.png" width="28" height="30" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="company-logo-container">
-                      <div class="company-logo">
-                        <img src="./assets/images/udemy.png" width="121" height="43" />
-                      </div>
-                    </div>
-                    <div class="app-logo-div">
-                      <p class="company-details">The most intuitive and flexible benefits engagement system for your
-                        employees
-                      </p>
-                      <div class="company-desc">
-                        <p class="know-yours">Performance review</p>
-                        <img src="./assets/icons/next_click.png" width="28" height="30" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="company-logo-container">
-                      <div class="company-logo">
-                        <img src="./assets/images/udemy.png" width="121" height="43" />
-                      </div>
-                    </div>
-                    <div class="app-logo-div">
-                      <p class="company-details">The most intuitive and flexible benefits engagement system for your
-                        employees
-                      </p>
-                      <div class="company-desc">
-                        <p class="know-yours">Know your compensation</p>
-                        <img src="./assets/icons/next_click.png" width="28" height="30" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="company-logo-container">
-                      <div class="company-logo">
-                        <img src="./assets/images/gmail.png" width="165" height="43" />
-                      </div>
-                    </div>
-                    <div class="app-logo-div">
-                      <p class="company-details">The most intuitive and flexible benefits engagement system for your
-                        employees
-                      </p>
-                      <div class="company-desc">
-                        <p class="know-yours">Claim expenses</p>
-                        <img src="./assets/icons/next_click.png" width="28" height="30" />
-                      </div>
-                    </div>
-                  </div>
+              <div class="app-logo-div">
+                <p class="company-details">The most intuitive and flexible benefits engagement system for your
+                  employees
+                </p>
+                <div class="company-desc">
+                  <p class="know-yours">Know your benefits</p>
+                  <img src="./assets/icons/next_click.png" width="28" height="30" />
                 </div>
               </div>
-              <div class="container app-tabs mt-5 p-0">
-              <ul class="nav nav-pills mb-3" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link active" id="all-tab" data-bs-toggle="pill"
-                    data-bs-target="#all-tab-id" type="button" role="tab" aria-controls="all-tab"
-                    aria-selected="true">All</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="Groceries" data-bs-toggle="pill"
-                    data-bs-target="#Groceries-tab" type="button" role="tab" aria-controls="Groceries-tab"
-                    aria-selected="false">Groceries</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="health-tab" data-bs-toggle="pill"
-                    data-bs-target="#health" type="button" role="tab" aria-controls="pills-contact"
-                    aria-selected="false">Health and fitness</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="Travel-tab" data-bs-toggle="pill"
-                    data-bs-target="#Travel" type="button" role="tab" aria-controls="pills-contact"
-                    aria-selected="false">Travel and taxi</button>
-                </li>
-              </ul>
+            </div>
+            <div class="col-md-3">
+              <div class="company-logo-container">
+                <div class="company-logo">
+                  <img src="./assets/images/udemy.png" width="121" height="43" />
+                </div>
               </div>
-              <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="all-tab-id" role="tabpanel"
-                  aria-labelledby="Groceries">
-                  <div class="container myntra-container p-0">
-                    <div class="row mt-5">
-                      <div class="col-md-6">
-                        <div class="myntra-subcontainer">
-                          <div class="mytra-app-card">
-                            <div class="myntra-details">
-                            <div class="myntra-image">
-                              <img src="./assets/icons/myntra.png" width="76" height="76"/>
-                            </div>  
-                              <div class="myntra-title-subtitle">
-                                <p class="myntra-name">Roman reigns</p>
-                                <p class="myntra-subname">Myntra app</p>
-                              </div>
-              
+              <div class="app-logo-div">
+                <p class="company-details">Udemy is a platform that allows instructors to build online courses on
+                  their preferred topics
+                </p>
+                <div class="company-desc">
+                  <p class="know-yours">Want to learn</p>
+                  <img src="./assets/icons/next_click.png" width="28" height="30" />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="company-logo-container">
+                <div class="company-logo">
+                  <img src="./assets/images/udemy.png" width="121" height="43" />
+                </div>
+              </div>
+              <div class="app-logo-div">
+                <p class="company-details">The most intuitive and flexible benefits engagement system for your
+                  employees
+                </p>
+                <div class="company-desc">
+                  <p class="know-yours">Machine learning A-Z</p>
+                  <img src="./assets/icons/next_click.png" width="28" height="30" />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="company-logo-container">
+                <div class="company-logo">
+                  <img src="./assets/images/gmail.png" width="165" height="43" />
+                </div>
+              </div>
+              <div class="app-logo-div">
+                <p class="company-details">The most intuitive and flexible benefits engagement system for your
+                  employees
+                </p>
+                <div class="company-desc">
+                  <p class="know-yours">Check your mail</p>
+                  <img src="./assets/icons/next_click.png" width="28" height="30" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row ms-0 me-0 mt-5">
+            <div class="col-md-3">
+              <div class="company-logo-container">
+                <div class="company-logo">
+                  <img src="./assets/images/belove-logo.png" width="185" height="51" />
+                </div>
+              </div>
+              <div class="app-logo-div">
+                <p class="company-details">The most intuitive and flexible benefits engagement system for your
+                  employees
+                </p>
+                <div class="company-desc">
+                  <p class="know-yours">Check Success factor</p>
+                  <img src="./assets/icons/next_click.png" width="28" height="30" />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="company-logo-container">
+                <div class="company-logo">
+                  <img src="./assets/images/udemy.png" width="121" height="43" />
+                </div>
+              </div>
+              <div class="app-logo-div">
+                <p class="company-details">The most intuitive and flexible benefits engagement system for your
+                  employees
+                </p>
+                <div class="company-desc">
+                  <p class="know-yours">Performance review</p>
+                  <img src="./assets/icons/next_click.png" width="28" height="30" />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="company-logo-container">
+                <div class="company-logo">
+                  <img src="./assets/images/udemy.png" width="121" height="43" />
+                </div>
+              </div>
+              <div class="app-logo-div">
+                <p class="company-details">The most intuitive and flexible benefits engagement system for your
+                  employees
+                </p>
+                <div class="company-desc">
+                  <p class="know-yours">Know your compensation</p>
+                  <img src="./assets/icons/next_click.png" width="28" height="30" />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="company-logo-container">
+                <div class="company-logo">
+                  <img src="./assets/images/gmail.png" width="165" height="43" />
+                </div>
+              </div>
+              <div class="app-logo-div">
+                <p class="company-details">The most intuitive and flexible benefits engagement system for your
+                  employees
+                </p>
+                <div class="company-desc">
+                  <p class="know-yours">Claim expenses</p>
+                  <img src="./assets/icons/next_click.png" width="28" height="30" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container app-tabs mt-5 p-0">
+          <ul class="nav nav-pills mb-3" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="all-tab" data-bs-toggle="pill"
+                data-bs-target="#all-tab-id" type="button" role="tab" aria-controls="all-tab"
+                aria-selected="true">All</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="Groceries" data-bs-toggle="pill"
+                data-bs-target="#Groceries-tab" type="button" role="tab" aria-controls="Groceries-tab"
+                aria-selected="false">Groceries</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="health-tab" data-bs-toggle="pill"
+                data-bs-target="#health" type="button" role="tab" aria-controls="pills-contact"
+                aria-selected="false">Health and fitness</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="Travel-tab" data-bs-toggle="pill"
+                data-bs-target="#Travel" type="button" role="tab" aria-controls="pills-contact"
+                aria-selected="false">Travel and taxi</button>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="all-tab-id" role="tabpanel"
+            aria-labelledby="Groceries">
+            <div class="container myntra-container p-0">
+              <div class="row mt-5">
+                <div class="col-md-6">
+                  <div class="myntra-subcontainer">
+                    <div class="mytra-app-card">
+                      <div class="myntra-details">
+                        <div class="myntra-image">
+                          <img src="./assets/icons/myntra.png" width="76" height="76"/>
+                        </div>
+                        <div class="myntra-title-subtitle">
+                          <p class="myntra-name">Roman reigns</p>
+                          <p class="myntra-subname">Myntra app</p>
+                        </div>
+                      </div>
+                      <button type="button" class="primary-button-2">Visit Myntra</button>
+                    </div>
+                    <div class="myntra-product">
+                      <div class="tshirt-div">
+                        <img src="./assets/images/tshirt.png" width="63" height="42"/>
+                        <p class="purchased">Recent purchased</p>
+                      </div>
+                      <div class="tshirt-div">
+                        <img src="./assets/images/tshirt.png" width="63" height="42"/>
+                        <p class="purchased">Order shipped</p>
+                      </div>
+                      <div class="tshirt-div">
+                        <p class="tshirt-order-num">22</p>
+                        <p class="purchased">Total order</p>
+                      </div>
+                      <div class="tshirt-div-one">
+                        <p class="purchased">More</p>
+                        <img src="./assets/icons/next_click.png" width="21" height="22"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="book-myshow-container">
+                        <div class="book-myshow-subcontainer">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/bookmyshow.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">Book my show</p>
+                              <p class="roman-regins">Roman reigns</p>
                             </div>
-                            <button type="button" class="primary-button-2">Visit Myntra</button>
-                        </div> 
-            
-                        <div class="myntra-product">
-                          <div class="tshirt-div">
-                            <img src="./assets/images/tshirt.png" width="63" height="42"/>
-                            <p class="purchased">Recent purchased</p>
                           </div>
-              
-                          <div class="tshirt-div">
-                            <img src="./assets/images/tshirt.png" width="63" height="42"/>
-                            <p class="purchased">Order shipped</p>
+                          <img src="./assets/icons/showmore.png" width="4" height="20"/>
+                        </div>
+                        <div class="book-myshow-subcontainer pt-5">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/movie-image.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">John wick 4</p>
+                              <p class="roman-regins">12:00-15:00</p>
+                            </div>
                           </div>
-              
-                          <div class="tshirt-div">
-                            <p class="tshirt-order-num">22</p>
-                            <p class="purchased">Total order</p>
+                          <button type="button" class="primary-button-3">Visit Site</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="book-myshow-container">
+                        <div class="book-myshow-subcontainer">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/ccd.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">Cafe coffe day</p>
+                              <p class="roman-regins">Roman reigns</p>
+                            </div>
                           </div>
-              
-                          <div class="tshirt-div-one">
-                            <p class="purchased">More</p> 
-                            <img src="./assets/icons/next_click.png" width="21" height="22"/>
+                          <img src="./assets/icons/showmore.png" width="4" height="20"/>
+                        </div>
+                        <div class="book-myshow-subcontainer pt-5">
+                          <div class="book-myshow-flex">
+                            <div class="bg-img">
+                              <img src="./assets/icons/coffemug.png" width="60" height="50"/>
+                              <p class="f-10 mb-0 color-gray">New offers</p>
+                            </div>
+                            <div class="book-my-show-details">
+                              <div class="bg-img">
+                                <img src="./assets/icons/coffemug.png" width="60" height="50"/>
+                                <p class="f-10 mb-0 color-gray">New offers</p>
+                              </div>
+                            </div>
                           </div>
+                          <div>
+                            <div>
+                              <p class="amt mb-0">Rs. 200</p>
+                              <p class="label-text f-10 mb-0 color-gray">Wallet</p>
+                            </div>
+                            <button type="button" class="primary-button-3">Visit Site</button>
                           </div>
                         </div>
-                       
-                      
-                      </div>
-            
-                      <div class="col-md-6">
-                          <div class="row">
-                            <div class="col-md-6">
-                              <div class="book-myshow-container">
-                                <div class="book-myshow-subcontainer">
-                                  <div class="book-myshow-flex">
-                                    <img src="./assets/icons/bookmyshow.png" width="65" height="65"/>
-                                    <div class="book-my-show-details">
-                                      <p class="bookmyshow">Book my show</p>
-                                      <p class="roman-regins">Roman reigns</p>
-                                    </div>
-                                  </div>
-                                <img src="./assets/icons/showmore.png" width="4" height="20"/>
-                                </div>
-            
-                                <div class="book-myshow-subcontainer pt-5">
-                                  <div class="book-myshow-flex">
-                                    <img src="./assets/icons/movie-image.png" width="65" height="65"/>
-                                    <div class="book-my-show-details">
-                                      <p class="bookmyshow">John wick 4</p>
-                                      <p class="roman-regins">12:00-15:00</p>
-                                    </div>
-                                  </div>
-                                    <button type="button" class="primary-button-3">Visit Site</button>
-                                </div>
-                              </div>
-                            </div>
-            
-                            <div class="col-md-6">
-                              <div class="book-myshow-container">
-                                <div class="book-myshow-subcontainer">
-                                  <div class="book-myshow-flex">
-                                    <img src="./assets/icons/ccd.png" width="65" height="65"/>
-                                    <div class="book-my-show-details">
-                                      <p class="bookmyshow">Cafe coffe day</p>
-                                      <p class="roman-regins">Roman reigns</p>
-                                    </div>
-                                  </div>
-                                <img src="./assets/icons/showmore.png" width="4" height="20"/>
-                                </div>
-            
-                                <div class="book-myshow-subcontainer pt-5">
-                                  <div class="book-myshow-flex">
-                                    <div class="bg-img">
-                                    <img src="./assets/icons/coffemug.png" width="60" height="50"/>
-                                    <p class="f-10 mb-0 color-gray">New offers</p>
-                                    </div>
-                                    <div class="book-my-show-details">
-                                      <div class="bg-img">
-                                        <img src="./assets/icons/coffemug.png" width="60" height="50"/>
-                                        <p class="f-10 mb-0 color-gray">New offers</p>
-                                        </div>
-                                    </div>
-                                  </div>
-                                  <div>                           
-                                    <div>
-                                   <p class="amt mb-0">Rs. 200</p>
-                                   <p class="label-text f-10 mb-0 color-gray">Wallet</p>
-                                 </div>
-                                   <button type="button" class="primary-button-3">Visit Site</button>
-                                   </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
                       </div>
                     </div>
                   </div>
-            
-                  <div class="container myntra-container p-0">
-                    <div class="row mt-5">
-                      <div class="col-md-6">
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="book-myshow-container">
-                              <div class="book-myshow-subcontainer">
-                                <div class="book-myshow-flex">
-                                  <img src="./assets/icons/bookmyshow.png" width="65" height="65"/>
-                                  <div class="book-my-show-details">
-                                    <p class="bookmyshow">Book my show</p>
-                                    <p class="roman-regins">Roman reigns</p>
-                                  </div>
-                                </div>
-                              <img src="./assets/icons/showmore.png" width="4" height="20"/>
-                              </div>
-            
-                              <div class="book-myshow-subcontainer pt-5">
-                                <div class="book-myshow-flex">
-                                  <img src="./assets/icons/movie-image.png" width="65" height="65"/>
-                                  <div class="book-my-show-details">
-                                    <p class="bookmyshow">John wick 4</p>
-                                    <p class="roman-regins">12:00-15:00</p>
-                                  </div>
-                                </div>
-                                <div>                           
-                                  <div>
-                                 <p class="amt mb-0">Rs. 200</p>
-                                 <p class="label-text f-10 mb-0 color-gray">Wallet</p>
-                               </div>
-                                 <button type="button" class="primary-button-3">Visit Site</button>
-                                 </div>
-                              </div>
+                </div>
+              </div>
+            </div>
+            <div class="container myntra-container p-0">
+              <div class="row mt-5">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="book-myshow-container">
+                        <div class="book-myshow-subcontainer">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/bookmyshow.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">Book my show</p>
+                              <p class="roman-regins">Roman reigns</p>
                             </div>
                           </div>
-            
-                          <div class="col-md-6">
-                            <div class="book-myshow-container">
-                              <div class="book-myshow-subcontainer">
-                                <div class="book-myshow-flex">
-                                  <img src="./assets/icons/ccd.png" width="65" height="65"/>
-                                  <div class="book-my-show-details">
-                                    <p class="bookmyshow">Cafe coffe day</p>
-                                    <p class="roman-regins">Roman reigns</p>
-                                  </div>
-                                </div>
-                              <img src="./assets/icons/showmore.png" width="4" height="20"/>
-                              </div>
-            
-                              <div class="book-myshow-subcontainer pt-5">
-                                <div class="book-myshow-flex">
-                                  <div class="bg-img">
-                                  <img src="./assets/icons/coffemug.png" width="60" height="50"/>
-                                  <p class="f-10 mb-0 color-gray">New offers</p>
-                                  </div>
-                                  <div class="book-my-show-details">
-                                    <div class="bg-img">
-                                      <img src="./assets/icons/coffemug.png" width="60" height="50"/>
-                                      <p class="f-10 mb-0 color-gray">New offers</p>
-                                      </div>
-                                  </div>
-                                </div>
-                                <div>                           
-                                  <div>
-                                 <p class="amt mb-0">Rs. 200</p>
-                                 <p class="label-text f-10 mb-0 color-gray">Wallet</p>
-                               </div>
-                                 <button type="button" class="primary-button-3">Visit Site</button>
-                                 </div>
-                              </div>
+                          <img src="./assets/icons/showmore.png" width="4" height="20"/>
+                        </div>
+                        <div class="book-myshow-subcontainer pt-5">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/movie-image.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">John wick 4</p>
+                              <p class="roman-regins">12:00-15:00</p>
                             </div>
+                          </div>
+                          <div>
+                            <div>
+                              <p class="amt mb-0">Rs. 200</p>
+                              <p class="label-text f-10 mb-0 color-gray">Wallet</p>
+                            </div>
+                            <button type="button" class="primary-button-3">Visit Site</button>
                           </div>
                         </div>
-                    </div>
-            
-                      <div class="col-md-6">
-                          <div class="row">
-                            <div class="col-md-6">
-                              <div class="book-myshow-container">
-                                <div class="book-myshow-subcontainer">
-                                  <div class="book-myshow-flex">
-                                    <img src="./assets/icons/bookmyshow.png" width="65" height="65"/>
-                                    <div class="book-my-show-details">
-                                      <p class="bookmyshow">Book my show</p>
-                                      <p class="roman-regins">Roman reigns</p>
-                                    </div>
-                                  </div>
-                                <img src="./assets/icons/showmore.png" width="4" height="20"/>
-                                </div>
-            
-                                <div class="book-myshow-subcontainer pt-5">
-                                  <div class="book-myshow-flex">
-                                    <img src="./assets/icons/movie-image.png" width="65" height="65"/>
-                                    <div class="book-my-show-details">
-                                      <p class="bookmyshow">John wick 4</p>
-                                      <p class="roman-regins">12:00-15:00</p>
-                                    </div>
-                                  </div>
-                                  <div>                           
-                                    <div>
-                                   <p class="amt mb-0">Rs. 200</p>
-                                   <p class="label-text f-10 mb-0 color-gray">Wallet</p>
-                                 </div>
-                                   <button type="button" class="primary-button-3">Visit Site</button>
-                                   </div>
-                                </div>
-                              </div>
-                            </div>
-            
-                            <div class="col-md-6">
-                              <div class="book-myshow-container">
-                                <div class="book-myshow-subcontainer">
-                                  <div class="book-myshow-flex">
-                                    <img src="./assets/icons/ccd.png" width="65" height="65"/>
-                                    <div class="book-my-show-details">
-                                      <p class="bookmyshow">Cafe coffe day</p>
-                                      <p class="roman-regins">Roman reigns</p>
-                                    </div>
-                                  </div>
-                                <img src="./assets/icons/showmore.png" width="4" height="20"/>
-                                </div>
-            
-                                <div class="book-myshow-subcontainer pt-5">
-                                  <div class="book-myshow-flex">
-                                    <div class="bg-img">
-                                    <img src="./assets/icons/coffemug.png" width="60" height="50"/>
-                                    <p class="f-10 mb-0 color-gray">New offers</p>
-                                    </div>
-                                    <div class="book-my-show-details">
-                                      <div class="bg-img">
-                                        <img src="./assets/icons/coffemug.png" width="60" height="50"/>
-                                        <p class="f-10 mb-0 color-gray">New offers</p>
-                                        </div>
-                                    </div>
-                                  </div>
-                                  <div>                           
-                                     <div>
-                                    <p class="amt mb-0">Rs. 200</p>
-                                    <p class="label-text f-10 mb-0 color-gray">Wallet</p>
-                                  </div>
-                                    <button type="button" class="primary-button-3">Visit Site</button>
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
                       </div>
                     </div>
-                  </div>  
-                </div>
-                <div class="tab-pane fade" id="Groceries-tab" role="tabpanel"
-                  aria-labelledby="pills-profile-tab22">
-                  <div class="container myntra-container p-0">
-                    <div class="row mt-5">
-                      <div class="col-md-6">
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="book-myshow-container">
-                              <div class="book-myshow-subcontainer">
-                                <div class="book-myshow-flex">
-                                  <img src="./assets/icons/bookmyshow.png" width="65" height="65"/>
-                                  <div class="book-my-show-details">
-                                    <p class="bookmyshow">Book my show</p>
-                                    <p class="roman-regins">Roman reigns</p>
-                                  </div>
-                                </div>
-                              <img src="./assets/icons/showmore.png" width="4" height="20"/>
-                              </div>
-            
-                              <div class="book-myshow-subcontainer pt-5">
-                                <div class="book-myshow-flex">
-                                  <img src="./assets/icons/movie-image.png" width="65" height="65"/>
-                                  <div class="book-my-show-details">
-                                    <p class="bookmyshow">John wick 4</p>
-                                    <p class="roman-regins">12:00-15:00</p>
-                                  </div>
-                                </div>
-                                <div>                           
-                                  <div>
-                                 <p class="amt mb-0">Rs. 200</p>
-                                 <p class="label-text f-10 mb-0 color-gray">Wallet</p>
-                               </div>
-                                 <button type="button" class="primary-button-3">Visit Site</button>
-                                 </div>
+                    <div class="col-md-6">
+                      <div class="book-myshow-container">
+                        <div class="book-myshow-subcontainer">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/ccd.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">Cafe coffe day</p>
+                              <p class="roman-regins">Roman reigns</p>
+                            </div>
+                          </div>
+                          <img src="./assets/icons/showmore.png" width="4" height="20"/>
+                        </div>
+                        <div class="book-myshow-subcontainer pt-5">
+                          <div class="book-myshow-flex">
+                            <div class="bg-img">
+                              <img src="./assets/icons/coffemug.png" width="60" height="50"/>
+                              <p class="f-10 mb-0 color-gray">New offers</p>
+                            </div>
+                            <div class="book-my-show-details">
+                              <div class="bg-img">
+                                <img src="./assets/icons/coffemug.png" width="60" height="50"/>
+                                <p class="f-10 mb-0 color-gray">New offers</p>
                               </div>
                             </div>
                           </div>
-            
-                          <div class="col-md-6">
-                            <div class="book-myshow-container">
-                              <div class="book-myshow-subcontainer">
-                                <div class="book-myshow-flex">
-                                  <img src="./assets/icons/ccd.png" width="65" height="65"/>
-                                  <div class="book-my-show-details">
-                                    <p class="bookmyshow">Cafe coffe day</p>
-                                    <p class="roman-regins">Roman reigns</p>
-                                  </div>
-                                </div>
-                              <img src="./assets/icons/showmore.png" width="4" height="20"/>
-                              </div>
-            
-                              <div class="book-myshow-subcontainer pt-5">
-                                <div class="book-myshow-flex">
-                                  <div class="bg-img">
-                                  <img src="./assets/icons/coffemug.png" width="60" height="50"/>
-                                  <p class="f-10 mb-0 color-gray">New offers</p>
-                                  </div>
-                                  <div class="book-my-show-details">
-                                    <div class="bg-img">
-                                      <img src="./assets/icons/coffemug.png" width="60" height="50"/>
-                                      <p class="f-10 mb-0 color-gray">New offers</p>
-                                      </div>
-                                  </div>
-                                </div>
-                                <div>                           
-                                  <div>
-                                 <p class="amt mb-0">Rs. 200</p>
-                                 <p class="label-text f-10 mb-0 color-gray">Wallet</p>
-                               </div>
-                                 <button type="button" class="primary-button-3">Visit Site</button>
-                                 </div>
-                              </div>
+                          <div>
+                            <div>
+                              <p class="amt mb-0">Rs. 200</p>
+                              <p class="label-text f-10 mb-0 color-gray">Wallet</p>
                             </div>
+                            <button type="button" class="primary-button-3">Visit Site</button>
                           </div>
                         </div>
+                      </div>
                     </div>
-            
-                      <div class="col-md-6">
-                          <div class="row">
-                            <div class="col-md-6">
-                              <div class="book-myshow-container">
-                                <div class="book-myshow-subcontainer">
-                                  <div class="book-myshow-flex">
-                                    <img src="./assets/icons/bookmyshow.png" width="65" height="65"/>
-                                    <div class="book-my-show-details">
-                                      <p class="bookmyshow">Book my show</p>
-                                      <p class="roman-regins">Roman reigns</p>
-                                    </div>
-                                  </div>
-                                <img src="./assets/icons/showmore.png" width="4" height="20"/>
-                                </div>
-            
-                                <div class="book-myshow-subcontainer pt-5">
-                                  <div class="book-myshow-flex">
-                                    <img src="./assets/icons/movie-image.png" width="65" height="65"/>
-                                    <div class="book-my-show-details">
-                                      <p class="bookmyshow">John wick 4</p>
-                                      <p class="roman-regins">12:00-15:00</p>
-                                    </div>
-                                  </div>
-                                  <div>                           
-                                    <div>
-                                   <p class="amt mb-0">Rs. 200</p>
-                                   <p class="label-text f-10 mb-0 color-gray">Wallet</p>
-                                 </div>
-                                   <button type="button" class="primary-button-3">Visit Site</button>
-                                   </div>
-                                </div>
-                              </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="book-myshow-container">
+                        <div class="book-myshow-subcontainer">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/bookmyshow.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">Book my show</p>
+                              <p class="roman-regins">Roman reigns</p>
                             </div>
-            
-                            <div class="col-md-6">
-                              <div class="book-myshow-container">
-                                <div class="book-myshow-subcontainer">
-                                  <div class="book-myshow-flex">
-                                    <img src="./assets/icons/ccd.png" width="65" height="65"/>
-                                    <div class="book-my-show-details">
-                                      <p class="bookmyshow">Cafe coffe day</p>
-                                      <p class="roman-regins">Roman reigns</p>
-                                    </div>
-                                  </div>
-                                <img src="./assets/icons/showmore.png" width="4" height="20"/>
-                                </div>
-            
-                                <div class="book-myshow-subcontainer pt-5">
-                                  <div class="book-myshow-flex">
-                                    <div class="bg-img">
-                                    <img src="./assets/icons/coffemug.png" width="60" height="50"/>
-                                    <p class="f-10 mb-0 color-gray">New offers</p>
-                                    </div>
-                                    <div class="book-my-show-details">
-                                      <div class="bg-img">
-                                        <img src="./assets/icons/coffemug.png" width="60" height="50"/>
-                                        <p class="f-10 mb-0 color-gray">New offers</p>
-                                        </div>
-                                    </div>
-                                  </div>
-                                  <div>                           
-                                     <div>
-                                    <p class="amt mb-0">Rs. 200</p>
-                                    <p class="label-text f-10 mb-0 color-gray">Wallet</p>
-                                  </div>
-                                    <button type="button" class="primary-button-3">Visit Site</button>
-                                    </div>
-                                </div>
+                          </div>
+                          <img src="./assets/icons/showmore.png" width="4" height="20"/>
+                        </div>
+                        <div class="book-myshow-subcontainer pt-5">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/movie-image.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">John wick 4</p>
+                              <p class="roman-regins">12:00-15:00</p>
+                            </div>
+                          </div>
+                          <div>
+                            <div>
+                              <p class="amt mb-0">Rs. 200</p>
+                              <p class="label-text f-10 mb-0 color-gray">Wallet</p>
+                            </div>
+                            <button type="button" class="primary-button-3">Visit Site</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="book-myshow-container">
+                        <div class="book-myshow-subcontainer">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/ccd.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">Cafe coffe day</p>
+                              <p class="roman-regins">Roman reigns</p>
+                            </div>
+                          </div>
+                          <img src="./assets/icons/showmore.png" width="4" height="20"/>
+                        </div>
+                        <div class="book-myshow-subcontainer pt-5">
+                          <div class="book-myshow-flex">
+                            <div class="bg-img">
+                              <img src="./assets/icons/coffemug.png" width="60" height="50"/>
+                              <p class="f-10 mb-0 color-gray">New offers</p>
+                            </div>
+                            <div class="book-my-show-details">
+                              <div class="bg-img">
+                                <img src="./assets/icons/coffemug.png" width="60" height="50"/>
+                                <p class="f-10 mb-0 color-gray">New offers</p>
                               </div>
                             </div>
                           </div>
+                          <div>
+                            <div>
+                              <p class="amt mb-0">Rs. 200</p>
+                              <p class="label-text f-10 mb-0 color-gray">Wallet</p>
+                            </div>
+                            <button type="button" class="primary-button-3">Visit Site</button>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div> 
+                  </div>
                 </div>
-                <div class="tab-pane fade" id="health" role="tabpanel"
-                  aria-labelledby="health-tab">
-                  Health and fitness
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="Groceries-tab" role="tabpanel"
+            aria-labelledby="pills-profile-tab22">
+            <div class="container myntra-container p-0">
+              <div class="row mt-5">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="book-myshow-container">
+                        <div class="book-myshow-subcontainer">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/bookmyshow.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">Book my show</p>
+                              <p class="roman-regins">Roman reigns</p>
+                            </div>
+                          </div>
+                          <img src="./assets/icons/showmore.png" width="4" height="20"/>
+                        </div>
+                        <div class="book-myshow-subcontainer pt-5">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/movie-image.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">John wick 4</p>
+                              <p class="roman-regins">12:00-15:00</p>
+                            </div>
+                          </div>
+                          <div>
+                            <div>
+                              <p class="amt mb-0">Rs. 200</p>
+                              <p class="label-text f-10 mb-0 color-gray">Wallet</p>
+                            </div>
+                            <button type="button" class="primary-button-3">Visit Site</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="book-myshow-container">
+                        <div class="book-myshow-subcontainer">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/ccd.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">Cafe coffe day</p>
+                              <p class="roman-regins">Roman reigns</p>
+                            </div>
+                          </div>
+                          <img src="./assets/icons/showmore.png" width="4" height="20"/>
+                        </div>
+                        <div class="book-myshow-subcontainer pt-5">
+                          <div class="book-myshow-flex">
+                            <div class="bg-img">
+                              <img src="./assets/icons/coffemug.png" width="60" height="50"/>
+                              <p class="f-10 mb-0 color-gray">New offers</p>
+                            </div>
+                            <div class="book-my-show-details">
+                              <div class="bg-img">
+                                <img src="./assets/icons/coffemug.png" width="60" height="50"/>
+                                <p class="f-10 mb-0 color-gray">New offers</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div>
+                              <p class="amt mb-0">Rs. 200</p>
+                              <p class="label-text f-10 mb-0 color-gray">Wallet</p>
+                            </div>
+                            <button type="button" class="primary-button-3">Visit Site</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="tab-pane fade" id="Travel" role="tabpanel"
-                aria-labelledby="Travel-tab">
-                Travel and taxi
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="book-myshow-container">
+                        <div class="book-myshow-subcontainer">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/bookmyshow.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">Book my show</p>
+                              <p class="roman-regins">Roman reigns</p>
+                            </div>
+                          </div>
+                          <img src="./assets/icons/showmore.png" width="4" height="20"/>
+                        </div>
+                        <div class="book-myshow-subcontainer pt-5">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/movie-image.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">John wick 4</p>
+                              <p class="roman-regins">12:00-15:00</p>
+                            </div>
+                          </div>
+                          <div>
+                            <div>
+                              <p class="amt mb-0">Rs. 200</p>
+                              <p class="label-text f-10 mb-0 color-gray">Wallet</p>
+                            </div>
+                            <button type="button" class="primary-button-3">Visit Site</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="book-myshow-container">
+                        <div class="book-myshow-subcontainer">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/ccd.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">Cafe coffe day</p>
+                              <p class="roman-regins">Roman reigns</p>
+                            </div>
+                          </div>
+                          <img src="./assets/icons/showmore.png" width="4" height="20"/>
+                        </div>
+                        <div class="book-myshow-subcontainer pt-5">
+                          <div class="book-myshow-flex">
+                            <div class="bg-img">
+                              <img src="./assets/icons/coffemug.png" width="60" height="50"/>
+                              <p class="f-10 mb-0 color-gray">New offers</p>
+                            </div>
+                            <div class="book-my-show-details">
+                              <div class="bg-img">
+                                <img src="./assets/icons/coffemug.png" width="60" height="50"/>
+                                <p class="f-10 mb-0 color-gray">New offers</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div>
+                              <p class="amt mb-0">Rs. 200</p>
+                              <p class="label-text f-10 mb-0 color-gray">Wallet</p>
+                            </div>
+                            <button type="button" class="primary-button-3">Visit Site</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              </div>
-          
+            </div>
+          </div>
+          <div class="tab-pane fade" id="health" role="tabpanel"
+            aria-labelledby="health-tab">
+            Health and fitness
+          </div>
+          <div class="tab-pane fade" id="Travel" role="tabpanel"
+            aria-labelledby="Travel-tab">
+            Travel and taxi
+          </div>
+        </div>
       </div>
-        <div class="tab-pane fade" id="news" role="tabpanel"
-        aria-labelledby="news-tab" style="text-align: center;
-        font-size: 30px;">Comming Soon New section</div>
+      <div class="tab-pane fade" id="news" role="tabpanel"
+        aria-labelledby="news-tab">
+        <div class="container apps-container p-0">
+          <div class="news-slider">
+            <div>
+              <div>
+                <img src='/assets/images/news-slider.png'>
+                <p class="text-info-detail">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever sinc..
+                </p>
+              </div>
+            </div>
+            <div>
+              <div>
+                <img src='/assets/images/news-slider.png'>
+                <p class="text-info-detail">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever sinc..
+                </p>
+              </div>
+            </div>
+            <div>
+              <div>
+                <img src='/assets/images/news-slider.png'>
+                <p class="text-info-detail">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever sinc..
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container app-tabs mt-5 p-0">
+          <ul class="nav nav-pills mb-3" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="news-tab-id" data-bs-toggle="pill"
+                data-bs-target="#latest-news-tab-id" type="button" role="tab" aria-controls="all-tab"
+                aria-selected="true">Latest news</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="Groceries" data-bs-toggle="pill"
+                data-bs-target="#Groceries-tab" type="button" role="tab" aria-controls="Groceries-tab"
+                aria-selected="false">Mircosites</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="health-tab" data-bs-toggle="pill"
+                data-bs-target="#health" type="button" role="tab" aria-controls="pills-contact"
+                aria-selected="false">HR News</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="Travel-tab" data-bs-toggle="pill"
+                data-bs-target="#Travel" type="button" role="tab" aria-controls="pills-contact"
+                aria-selected="false">Employeement</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="Travel-tab" data-bs-toggle="pill"
+                data-bs-target="#Travel" type="button" role="tab" aria-controls="pills-contact"
+                aria-selected="false">Industry</button>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="latest-news-tab-id" role="tabpanel"
+            aria-labelledby="news-tab-id">
+            <div class="container news-container mt-5">
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="./assets/images/newsone.png" width="100%" />
+                  <div class="news-div-left">
+                    <p class="news-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do </p>
+                    <p class="news-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur
+                      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                      r
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="news-div-right">
+                    <img src="./assets/images/newstwo.png" width="323" height="296" />
+                    <div class="news-right-details">
+                      <p class="news-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do </p>
+                      <p class="news-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad 
+                      </p>
+                      <button type="button" class="btn btn-primary readmore-news">Read More</button>
+                    </div>
+                  </div>
+                  <div class="news-div-right mt-4">
+                    <img src="./assets/images/newsthree.png" width="323" height="296" />
+                    <div class="news-right-details">
+                      <p class="news-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do </p>
+                      <p class="news-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad 
+                      </p>
+                      <button type="button" class="btn btn-primary readmore-news">Read More</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="Groceries-tab" role="tabpanel"
+            aria-labelledby="pills-profile-tab22">
+            <div class="container myntra-container p-0">
+              <div class="row mt-5">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="book-myshow-container">
+                        <div class="book-myshow-subcontainer">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/bookmyshow.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">Book my show</p>
+                              <p class="roman-regins">Roman reigns</p>
+                            </div>
+                          </div>
+                          <img src="./assets/icons/showmore.png" width="4" height="20"/>
+                        </div>
+                        <div class="book-myshow-subcontainer pt-5">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/movie-image.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">John wick 4</p>
+                              <p class="roman-regins">12:00-15:00</p>
+                            </div>
+                          </div>
+                          <div>
+                            <div>
+                              <p class="amt mb-0">Rs. 200</p>
+                              <p class="label-text f-10 mb-0 color-gray">Wallet</p>
+                            </div>
+                            <button type="button" class="primary-button-3">Visit Site</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="book-myshow-container">
+                        <div class="book-myshow-subcontainer">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/ccd.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">Cafe coffe day</p>
+                              <p class="roman-regins">Roman reigns</p>
+                            </div>
+                          </div>
+                          <img src="./assets/icons/showmore.png" width="4" height="20"/>
+                        </div>
+                        <div class="book-myshow-subcontainer pt-5">
+                          <div class="book-myshow-flex">
+                            <div class="bg-img">
+                              <img src="./assets/icons/coffemug.png" width="60" height="50"/>
+                              <p class="f-10 mb-0 color-gray">New offers</p>
+                            </div>
+                            <div class="book-my-show-details">
+                              <div class="bg-img">
+                                <img src="./assets/icons/coffemug.png" width="60" height="50"/>
+                                <p class="f-10 mb-0 color-gray">New offers</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div>
+                              <p class="amt mb-0">Rs. 200</p>
+                              <p class="label-text f-10 mb-0 color-gray">Wallet</p>
+                            </div>
+                            <button type="button" class="primary-button-3">Visit Site</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="book-myshow-container">
+                        <div class="book-myshow-subcontainer">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/bookmyshow.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">Book my show</p>
+                              <p class="roman-regins">Roman reigns</p>
+                            </div>
+                          </div>
+                          <img src="./assets/icons/showmore.png" width="4" height="20"/>
+                        </div>
+                        <div class="book-myshow-subcontainer pt-5">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/movie-image.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">John wick 4</p>
+                              <p class="roman-regins">12:00-15:00</p>
+                            </div>
+                          </div>
+                          <div>
+                            <div>
+                              <p class="amt mb-0">Rs. 200</p>
+                              <p class="label-text f-10 mb-0 color-gray">Wallet</p>
+                            </div>
+                            <button type="button" class="primary-button-3">Visit Site</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="book-myshow-container">
+                        <div class="book-myshow-subcontainer">
+                          <div class="book-myshow-flex">
+                            <img src="./assets/icons/ccd.png" width="65" height="65"/>
+                            <div class="book-my-show-details">
+                              <p class="bookmyshow">Cafe coffe day</p>
+                              <p class="roman-regins">Roman reigns</p>
+                            </div>
+                          </div>
+                          <img src="./assets/icons/showmore.png" width="4" height="20"/>
+                        </div>
+                        <div class="book-myshow-subcontainer pt-5">
+                          <div class="book-myshow-flex">
+                            <div class="bg-img">
+                              <img src="./assets/icons/coffemug.png" width="60" height="50"/>
+                              <p class="f-10 mb-0 color-gray">New offers</p>
+                            </div>
+                            <div class="book-my-show-details">
+                              <div class="bg-img">
+                                <img src="./assets/icons/coffemug.png" width="60" height="50"/>
+                                <p class="f-10 mb-0 color-gray">New offers</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div>
+                              <p class="amt mb-0">Rs. 200</p>
+                              <p class="label-text f-10 mb-0 color-gray">Wallet</p>
+                            </div>
+                            <button type="button" class="primary-button-3">Visit Site</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="health" role="tabpanel"
+            aria-labelledby="health-tab">
+            Health and fitness
+          </div>
+          <div class="tab-pane fade" id="Travel" role="tabpanel"
+            aria-labelledby="Travel-tab">
+            Travel and taxi
+          </div>
+        </div>
+      </div>
       <div class="tab-pane fade" id="emp-profile" role="tabpanel"
         aria-labelledby="emp-profile-tab">
         <div class="container employee-profile-container">
@@ -1331,5 +1564,34 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(window).on('load', function () {
+$(".loading").hide();
+});
+        $('.news-slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      });
+      $('#news-tab').on('shown.bs.tab', function (e) {
+      $('.news-slider').slick('reinit')
+      });
+      //   $('.news-slider').slick('reinit')
+      });
+      $("#search-dropdown-div").hide();
+      $("#search-dropdown").click(function(){
+          $('#search-dropdown-div').toggle();
+  });   
+  $("#close").click(function(){
+    $("#search-dropdown-div").hide();
+  });  
+
+
+
+       
+    </script> 
   </body>
 </html>

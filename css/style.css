@@ -2,36 +2,81 @@
   font-family: AlBayan;
   src: url('../fonts/AlBayan.ttf');
 }
-body {
-  background-color: #f5f7f7 !important;
-  font-family: 'Poppins', sans-serif  !important;
-}
-.f-AI{
-  font-family: 'AlBayan',sans-serif!important;
-}
-.heading-title{
-  font-family: 'AlBayan',sans-serif !important;
-  font-size: 32px;
-    color: #401c73;
-    font-weight: 700;  
+
+
+.loading {
+  height: 100px;
+  width: 100px;
+  /* background-color: blue; */
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top-color: #401c73;
+  animation: spin infinite 1s;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.f-10{
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(359deg);
+  }
+}
+
+/* search dropdown */
+.search-dropdown{
+  background-color: #fff;
+  margin-top: 0;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 60px;
+  border-radius: 4px;
+  padding: 15px;
+  min-height: 130px;
+}
+body {
+  background-color: #f5f7f7 !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.f-AI {
+  font-family: 'AlBayan', sans-serif !important;
+}
+
+.heading-title {
+  font-family: 'AlBayan', sans-serif !important;
+  font-size: 32px;
+  color: #401c73;
+  font-weight: 700;
+}
+
+.f-10 {
   font-size: 10px;
 }
+
 /* common buttons */
-.primary-button{
+.primary-button {
   background-color: #401c73;
   border-radius: 5px;
   border: none;
   padding: 10px 15px;
   color: #fff;
 }
-.primary-button:hover , .primary-button:focus, .primary-button.btn:focus-visible{
+
+.primary-button:hover,
+.primary-button:focus,
+.primary-button.btn:focus-visible {
   background-color: #A495C5;
   color: #fff;
 }
-.primary-button-2{
+
+.primary-button-2 {
   background-color: #03445C;
   border-radius: 5px;
   border: none;
@@ -39,12 +84,15 @@ body {
   color: #fff;
   font-size: 12px;
 }
-.primary-button-2:hover , .primary-button-2:focus, .primary-button-2.btn:focus-visible{
+
+.primary-button-2:hover,
+.primary-button-2:focus,
+.primary-button-2.btn:focus-visible {
   background-color: #A495C5;
   color: #fff;
 }
 
-.primary-button-3{
+.primary-button-3 {
   background-color: #03445C;
   border-radius: 5px;
   border: none;
@@ -52,23 +100,31 @@ body {
   color: #fff;
   font-size: 10px;
 }
-.primary-button-3:hover , .primary-button-3:focus, .primary-button-3.btn:focus-visible{
+
+.primary-button-3:hover,
+.primary-button-3:focus,
+.primary-button-3.btn:focus-visible {
   background-color: #A495C5;
   color: #fff;
 }
+
 .dashboard-container {
   background-color: #401c73;
   height: 300px;
 }
-.logo{
+
+.logo {
   width: 193px;
   margin-top: 40px;
 }
+
 .dashboard-container .main {
   width: 100%;
   margin: 50px auto;
 }
-.profile-menu .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+
+.profile-menu .nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
   background-color: transparent;
   border-bottom: 1px solid #fff;
   border-radius: 0;
@@ -168,6 +224,7 @@ body {
   border-radius: 10px;
   height: 100px;
 }
+
 .apps-container .company-logo {
   text-align: center;
   padding-top: 25px;
@@ -229,11 +286,13 @@ body {
   font-size: 24px;
   font-weight: 500;
 }
-.b-bottom{
+
+.b-bottom {
   border-bottom: 1px solid #ABABAB;
 }
+
 .social-updates .social-updates-left .nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
+.nav-pills .show>.nav-link {
   background: #f5f7f7;
   color: #401c73;
   font-size: 24px;
@@ -249,7 +308,7 @@ body {
 }
 
 .social-updates .social-updates-right .nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
+.nav-pills .show>.nav-link {
   background: #f5f7f7;
   color: #401c73;
   font-size: 24px;
@@ -349,13 +408,14 @@ body {
   font-weight: 400;
 }
 
-.card-wrapper{
+.card-wrapper {
   background-color: #fff;
   border-radius: 20px;
   padding: 20px 20px;
 }
+
 .schedule-calendar .schedule-calendar-left .nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
+.nav-pills .show>.nav-link {
   background: #f5f7f7;
   color: #401c73;
   font-size: 24px;
@@ -427,6 +487,7 @@ body {
   align-items: center;
   justify-content: flex-start;
 }
+
 .schedule-calendar .schedule-calendar-div .product-launch-time {
   font-size: 20px;
   color: rgba(0, 0, 0, 0.37);
@@ -445,25 +506,25 @@ body {
   padding: 20px 20px;
 }
 
-.schedule-calendar .days-container .leavbtn{
-    margin-top: 50px;
-    margin-left: 20px;
-    margin-bottom: 20px;
+.schedule-calendar .days-container .leavbtn {
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .schedule-calendar .days-container .daysoff {
-    font-size: 32px;
-    color: #401c73;
-    font-weight: 700;
-    padding-left: 15px;
-    padding-bottom: 50px;
+  font-size: 32px;
+  color: #401c73;
+  font-weight: 700;
+  padding-left: 15px;
+  padding-bottom: 50px;
 }
 
 
-.schedule-calendar .days-container .days-container-child{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+.schedule-calendar .days-container .days-container-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .schedule-calendar .days-container .days-circle {
@@ -502,44 +563,47 @@ body {
   font-weight: 700;
 }
 
-.schedule-calendar .days-container .dasyof-date-div{
-    border-left: 6px solid #EF9FAC;
-    padding-left: 20px;
-    margin-bottom: 20px;
+.schedule-calendar .days-container .dasyof-date-div {
+  border-left: 6px solid #EF9FAC;
+  padding-left: 20px;
+  margin-bottom: 20px;
 }
 
-.schedule-calendar .days-container .description-days{
-    font-size:24px;
-    color: #000;
-    font-weight: 600;
-    margin-bottom: 0px;
+.schedule-calendar .days-container .description-days {
+  font-size: 24px;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 0px;
 }
 
-.schedule-calendar .days-container .days-date{
-    font-size:20px;
-    color: rgba(0, 0, 0, 0.37);
-    font-weight: 400;
+.schedule-calendar .days-container .days-date {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.37);
+  font-weight: 400;
 }
 
-.schedule-calendar .days-container .days-of-button-div .pending{
-    background: #EF9FAC;
-    border-radius: 17px;
-    border: none;
-    width: 100%;
+.schedule-calendar .days-container .days-of-button-div .pending {
+  background: #EF9FAC;
+  border-radius: 17px;
+  border: none;
+  width: 100%;
 }
-.rejected{
+
+.rejected {
   background-color: #EB455F;
   border-radius: 17px;
   border: none;
 }
-.rejected-border{
+
+.rejected-border {
   border-left: 6px solid #EB455F !important;
 }
-.confirm-border{
+
+.confirm-border {
   border-left: 6px solid #20A353 !important;
 }
 
-.confirm{
+.confirm {
   background-color: #20A353;
   border-radius: 17px;
   border: none;
@@ -551,62 +615,62 @@ body {
   padding: 20px 20px;
 }
 
-.schedule-calendar .benlove-container .benlove-flex{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.schedule-calendar .benlove-container .benlove-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .schedule-calendar .benlove-title {
-    font-size: 32px;
-    font-weight: 700;
-    color: #401c73;
-    margin-bottom: 0px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #401c73;
+  margin-bottom: 0px;
 }
 
 .schedule-calendar .visits {
   font-size: 20px;
   background-color: #401c73;
   border-radius: 6px;
-  border:none;
+  border: none;
 }
 
 .schedule-calendar .benlove-container .benlove-text {
-    font-size:20px;
-    color: #ABABAB;
-    font-weight: 500;
-    padding-top: 10px;
+  font-size: 20px;
+  color: #ABABAB;
+  font-weight: 500;
+  padding-top: 10px;
 }
 
 .schedule-calendar .benlove-container .know-yours {
-    font-size: 20px;
-    color: #401c73;
-    font-weight: 500;
-  }
+  font-size: 20px;
+  color: #401c73;
+  font-weight: 500;
+}
 
-.schedule-calendar .benlove-container .benifits .image-div{
-    background-color: #F5F7F7;
-    border-radius: 12px;
-    width: 190px;
-    text-align: center;
-    padding: 10px;
+.schedule-calendar .benlove-container .benifits .image-div {
+  background-color: #F5F7F7;
+  border-radius: 12px;
+  width: 190px;
+  text-align: center;
+  padding: 10px;
 }
 
 .schedule-calendar .benlove-container .benifits {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.schedule-calendar .benlove-container .benifits .learn{
-    font-size: 20px;
-    color: #000;
-    font-weight: 500;
-    line-height: 30px;
-    margin-bottom: 0;
-    padding-top: 15px;
+.schedule-calendar .benlove-container .benifits .learn {
+  font-size: 20px;
+  color: #000;
+  font-weight: 500;
+  line-height: 30px;
+  margin-bottom: 0;
+  padding-top: 15px;
 }
-  
+
 
 .employee-profile-container .employee-banner-container {
   border-radius: 10px;
@@ -626,288 +690,289 @@ body {
   z-index: 1;
 }
 
-.employee-profile-container
-  .employee-banner-container
-  .social-icon-flex
-  .social-icon-distnace {
+.employee-profile-container .employee-banner-container .social-icon-flex .social-icon-distnace {
   margin-right: 30px;
 }
 
-.mt-60px{
+.mt-60px {
   margin-top: -150px;
 }
-.pt-190{
+
+.pt-190 {
   padding-top: 190px;
 }
-.employe-profile-icon-div{
+
+.employe-profile-icon-div {
   max-width: 293px;
   width: 100%;
   padding-left: 50px;
 }
-.employee-profile-container .employe-profile-name-div{
+
+.employee-profile-container .employe-profile-name-div {
   margin-top: 180px;
   margin-left: 80px;
 
 }
 
-.employee-profile-container  .employe-profile-name-div .emp-title{
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 54px;
-    color: #401c73;
-    margin-bottom: 0;
+.employee-profile-container .employe-profile-name-div .emp-title {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+  color: #401c73;
+  margin-bottom: 0;
 }
 
-.employee-profile-container  .employe-profile-name-div .emp-job{
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 30px;
-    color: rgba(30, 30, 30, 0.49);
-    margin-bottom: 0;
-    padding-left: 20px;
+.employee-profile-container .employe-profile-name-div .emp-job {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: rgba(30, 30, 30, 0.49);
+  margin-bottom: 0;
+  padding-left: 20px;
 }
 
-.employee-profile-container .employe-profile-name-div .flag-icon-div{
-    display:flex;
-    justify-content: center;
-    align-items: center;    
+.employee-profile-container .employe-profile-name-div .flag-icon-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.employe-profile-container-two .personal-information{
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px 20px;
+.employe-profile-container-two .personal-information {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px 20px;
 }
 
 .employe-profile-container-two .personal-information .personal-information-text {
-    font-size:32px;
-    font-weight: 700;
-    color: #401c73;
+  font-size: 32px;
+  font-weight: 700;
+  color: #401c73;
 }
 
 .employe-profile-container-two .personal-information .email-text {
-    font-size:20px;
-    font-weight: 500;
-    color: #401c73;
+  font-size: 20px;
+  font-weight: 500;
+  color: #401c73;
 }
 
-.employe-profile-container-two .personal-information .email-example{
-    color: #ABABAB;
-    font-size:20px;
-    font-weight: 400;
+.employe-profile-container-two .personal-information .email-example {
+  color: #ABABAB;
+  font-size: 20px;
+  font-weight: 400;
 }
 
-.employe-profile-container-two .company-information{
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px 20px;
+.employe-profile-container-two .company-information {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px 20px;
 }
 
-.employe-profile-container-two .company-information .company-information-text{
-    font-size:32px;
-    font-weight: 700;
-    color: #401c73;
-}
-
-
-.employe-profile-container-two .company-information .bio-flex{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-.employe-profile-container-two .company-information .bio-flex-two{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-.employe-profile-container-two .company-information .bio{
-    font-size:20px;
-    font-weight: 500;
-    color: #401c73;
-    opacity: 0.99;
-    margin-bottom: 0px;
-}
-
-.employe-profile-container-two .company-information .edit-bio{
-    font-size:20px;
-    font-weight: 500;
-    color: #401c73;
-    opacity: 0.99;
-    text-decoration: underline;
-    margin-bottom: 0px;
-}
-
-.employe-profile-container-two .company-information .edit-bio{
-    font-size:20px;
-    font-weight: 500;
-    color: #401c73;
-    opacity: 0.99;
-    text-decoration: underline;
-    margin-bottom: 0px;
-    padding-right: 15px;
-
-}
-
-.employe-profile-container-two .company-information .bio-description{
-    font-weight: 400;
-    font-size: 20.7519px;
-    line-height: 31px;
-    color: #ABABAB;
-    padding-top: 20px;
-    border-bottom: 1px solid #ABABAB;
-    padding-bottom: 15px;
-}
-
-.employe-profile-container-two .company-information .manger-icon-div{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 15px;
-}
-
-.employe-profile-container-two .company-information .bio-description-one{
-    font-weight: 400;
-    font-size: 20.7519px;
-    line-height: 31px;
-    color: #ABABAB;
-    margin-bottom: 0px;
-    padding-left: 15px;
-}
-
-.employe-profile-container-two .company-information .team-div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.employe-profile-container-two .company-information .team-div .team-member-close{
-    margin-right: -15px;
-}
-
-.employe-profile-container-two .company-information .team-div .team-member{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.employe-profile-container-two .company-information .team-div .team-member .team-number{
-   font-size: 20px;
-   font-weight:400;
-   color: #000;
-   margin-bottom: 0px; 
-   margin-left: 25px;
+.employe-profile-container-two .company-information .company-information-text {
+  font-size: 32px;
+  font-weight: 700;
+  color: #401c73;
 }
 
 
-.employe-profile-container-two .my-schedule{
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px 20px;
-}
-
-.employe-profile-container-two .my-schedule .my-schedule-text{
-    font-size:32px;
-    font-weight: 700;
-    color: #401c73;
-}
-
-.employe-profile-container-two .my-schedule .my-schdule-flex .my-schedule-text{
-    font-size:32px;
-    font-weight: 700;
-    color: #401c73;
-}
-
-.employe-profile-container-two .my-schedule .my-schdule-flex{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.employe-profile-container-two .my-schedule .my-schdule-flex .bio-flex-two{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-.employe-profile-container-two .my-schedule .my-schdule-flex .bio-flex-two .edit-bio{
-    font-size:20px;
-    font-weight: 500;
-    color: #401c73;
-    opacity: 0.99;
-    text-decoration: underline;
-    margin-bottom: 0px;
-    margin-right: 15px;
-}
-
-.employe-profile-container-two .my-schedule .description-schedule{
-    font-size:20px;
-    font-weight: 500;
-    color: #401c73;
-    opacity: 0.99;
-}
-
-.employe-profile-container-two .my-schedule .schedule-date-div{
-    background-color: #A495C5;
-    border-radius: 17.0587px;
-    width: 190px;
-    padding: 20px 20px;
+.employe-profile-container-two .company-information .bio-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
 }
 
-.employe-profile-container-two .my-schedule .schedule-date-div .schedule-date{
-    font-weight: 400;
-    font-size: 20.4705px;
-    line-height: 166.5%;
-    color: #fff;
+.employe-profile-container-two .company-information .bio-flex-two {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
-.employe-profile-container-two .my-schedule .schedule-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.employe-profile-container-two .company-information .bio {
+  font-size: 20px;
+  font-weight: 500;
+  color: #401c73;
+  opacity: 0.99;
+  margin-bottom: 0px;
 }
 
-.employe-profile-container-two .my-schedule .schedule-container .leave-type{
-    font-weight: 400;
-    font-size: 20.4705px;
-    line-height: 166.5%;
-    color: #401C73;
+.employe-profile-container-two .company-information .edit-bio {
+  font-size: 20px;
+  font-weight: 500;
+  color: #401c73;
+  opacity: 0.99;
+  text-decoration: underline;
+  margin-bottom: 0px;
 }
 
-.employe-profile-container-two .my-schedule .schedule-container .Confirmed{
-    background: #20A353;
-    border-radius: 21.7144px;
-    border:none;
+.employe-profile-container-two .company-information .edit-bio {
+  font-size: 20px;
+  font-weight: 500;
+  color: #401c73;
+  opacity: 0.99;
+  text-decoration: underline;
+  margin-bottom: 0px;
+  padding-right: 15px;
+
+}
+
+.employe-profile-container-two .company-information .bio-description {
+  font-weight: 400;
+  font-size: 20.7519px;
+  line-height: 31px;
+  color: #ABABAB;
+  padding-top: 20px;
+  border-bottom: 1px solid #ABABAB;
+  padding-bottom: 15px;
+}
+
+.employe-profile-container-two .company-information .manger-icon-div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.employe-profile-container-two .company-information .bio-description-one {
+  font-weight: 400;
+  font-size: 20.7519px;
+  line-height: 31px;
+  color: #ABABAB;
+  margin-bottom: 0px;
+  padding-left: 15px;
+}
+
+.employe-profile-container-two .company-information .team-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.employe-profile-container-two .company-information .team-div .team-member-close {
+  margin-right: -15px;
+}
+
+.employe-profile-container-two .company-information .team-div .team-member {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.employe-profile-container-two .company-information .team-div .team-member .team-number {
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 0px;
+  margin-left: 25px;
+}
+
+
+.employe-profile-container-two .my-schedule {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px 20px;
+}
+
+.employe-profile-container-two .my-schedule .my-schedule-text {
+  font-size: 32px;
+  font-weight: 700;
+  color: #401c73;
+}
+
+.employe-profile-container-two .my-schedule .my-schdule-flex .my-schedule-text {
+  font-size: 32px;
+  font-weight: 700;
+  color: #401c73;
+}
+
+.employe-profile-container-two .my-schedule .my-schdule-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.employe-profile-container-two .my-schedule .my-schdule-flex .bio-flex-two {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.employe-profile-container-two .my-schedule .my-schdule-flex .bio-flex-two .edit-bio {
+  font-size: 20px;
+  font-weight: 500;
+  color: #401c73;
+  opacity: 0.99;
+  text-decoration: underline;
+  margin-bottom: 0px;
+  margin-right: 15px;
+}
+
+.employe-profile-container-two .my-schedule .description-schedule {
+  font-size: 20px;
+  font-weight: 500;
+  color: #401c73;
+  opacity: 0.99;
+}
+
+.employe-profile-container-two .my-schedule .schedule-date-div {
+  background-color: #A495C5;
+  border-radius: 17.0587px;
+  width: 190px;
+  padding: 20px 20px;
+
+}
+
+.employe-profile-container-two .my-schedule .schedule-date-div .schedule-date {
+  font-weight: 400;
+  font-size: 20.4705px;
+  line-height: 166.5%;
+  color: #fff;
+}
+
+.employe-profile-container-two .my-schedule .schedule-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.employe-profile-container-two .my-schedule .schedule-container .leave-type {
+  font-weight: 400;
+  font-size: 20.4705px;
+  line-height: 166.5%;
+  color: #401C73;
+}
+
+.employe-profile-container-two .my-schedule .schedule-container .Confirmed {
+  background: #20A353;
+  border-radius: 21.7144px;
+  border: none;
 }
 
 .employe-profile-container-two .company-information .Joining-date {
-    font-weight: 500;
-    font-size: 20.4705px;
-    line-height: 166.5%;
-    color: #401C73;
-    opacity: 0.99;
-    padding-top: 20px;
-    margin-bottom:0px;
+  font-weight: 500;
+  font-size: 20.4705px;
+  line-height: 166.5%;
+  color: #401C73;
+  opacity: 0.99;
+  padding-top: 20px;
+  margin-bottom: 0px;
 }
 
-.employe-profile-container-two .company-information .joining-date-details{
-    font-weight: 400;
-    font-size: 20.7519px;
-    line-height: 31px;
-    color: #ABABAB;
+.employe-profile-container-two .company-information .joining-date-details {
+  font-weight: 400;
+  font-size: 20.7519px;
+  line-height: 31px;
+  color: #ABABAB;
 }
-
 
 
 .apps-container .apps-deatils-tab {
   padding: 30px 20px;
   text-align: left;
 }
-.app-banner{
+
+.app-banner {
   max-width: 750px;
   width: 100%;
 }
@@ -925,6 +990,7 @@ body {
   line-height: 166.5%;
   color: rgba(0, 0, 0, 0.37);
 }
+
 .app-tab-main {
   margin-top: 65px;
 }
@@ -994,18 +1060,14 @@ body {
   color: rgba(0, 0, 0, 0.37);
   font-weight: 400;
   margin-bottom: 0;
- 
+
 }
 
-.myntra-container
-  .myntra-subcontainer
-  .myntra-product
-  .tshirt-div
-  .tshirt-order-num {
+.myntra-container .myntra-subcontainer .myntra-product .tshirt-div .tshirt-order-num {
   font-size: 20px;
   color: #00425a;
   font-weight: 700;
-  
+
 }
 
 .myntra-container .myntra-subcontainer .tshirt-div-one {
@@ -1020,32 +1082,32 @@ body {
   min-height: 100px;
 }
 
-.myntra-container .book-myshow-container{
+.myntra-container .book-myshow-container {
   background-color: #fff;
   border-radius: 18px;
   padding: 20px 20px;
   min-height: 240px;
 }
 
-.myntra-container .book-myshow-container .book-myshow-subcontainer{
+.myntra-container .book-myshow-container .book-myshow-subcontainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 
-.myntra-container .book-myshow-container .book-myshow-flex{
+.myntra-container .book-myshow-container .book-myshow-flex {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.myntra-container .book-myshow-container .book-myshow-flex .book-my-show-details{
+.myntra-container .book-myshow-container .book-myshow-flex .book-my-show-details {
   margin-left: 15px;
   text-align: left;
 }
 
-.myntra-container .book-myshow-container .book-myshow-flex .book-my-show-details .bookmyshow{ 
+.myntra-container .book-myshow-container .book-myshow-flex .book-my-show-details .bookmyshow {
   font-weight: 400;
   font-size: 17.4694px;
   line-height: 166.5%;
@@ -1054,70 +1116,177 @@ body {
 }
 
 
-.myntra-container .book-myshow-container .book-myshow-flex .book-my-show-details .roman-regins{ 
+.myntra-container .book-myshow-container .book-myshow-flex .book-my-show-details .roman-regins {
   color: rgba(0, 0, 0, 0.37);
   font-size: 14px;
   font-weight: 400;
   margin-bottom: 0px;
 }
 
-.myntra-container .book-myshow-subcontainer .vsite{
+.myntra-container .book-myshow-subcontainer .vsite {
   background-color: #03445c;
   border-radius: 10px;
   width: 122px;
   padding: 10px 10px;
   border: none;
 }
-.bg-img{
+
+.bg-img {
   background-color: #F5F7F7;
   padding: 5px;
   border-radius: 5px;
 }
-.bg-img img{
+
+.bg-img img {
   margin-bottom: 5px;
 }
-.amt{
+
+.amt {
   font-size: 12px;
   font-weight: 600;
   color: #00425A;
   text-align: center;
 }
-.color-gray{
-  color:rgba(0, 0, 0, 0.37);
+
+.color-gray {
+  color: rgba(0, 0, 0, 0.37);
 }
-.app-tabs .nav-pills .nav-link.active, .app-tabs .nav-pills .show>.nav-link {
+
+.app-tabs .nav-pills .nav-link.active,
+.app-tabs .nav-pills .show>.nav-link {
   border: 0.5px solid transparent;
   background-color: #A495C5;
   color: #fff;
 }
-.app-tabs .nav-pills .nav-link{
+
+.app-tabs .nav-pills .nav-link {
   padding: 8px 50px;
   border: 0.5px solid rgba(0, 0, 0, 0.37);
   border-radius: 10px;
   font-size: 20px;
   color: rgba(0, 0, 0, 0.37);
 }
-.app-tabs .nav-item{
+
+.app-tabs .nav-item {
   margin-right: 20px;
 }
-@media only screen and (max-width: 1400px) and (min-width: 991px)  {
-  .w-22{
-  width: 22%;
- }
- .w-56{
-   width: 56%;
- }
+
+
+.news-container .news-div-left {
+  text-align: left;
+  padding-top: 40px;
+}
+
+.news-container .news-div-left .news-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: #00425a;
+}
+
+.news-container .news-div-left .news-desc {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: rgba(30, 30, 30, 0.49);
+}
+
+.news-container .news-div-right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.news-container .news-div-right .news-right-details {
+  text-align: left;
+  margin-left: 25px;
+}
+
+.news-container .news-div-right .news-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: #00425a;
+}
+
+.news-container .news-div-right .news-desc {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: rgba(30, 30, 30, 0.49);
+}
+
+.news-container .news-div-right .news-right-details .readmore-news {
+  background: none;
+  color: #CC5B5F;
+  border: none;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.news-slider img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.news-slider .slick-prev:before,
+.news-slider .slick-next:before {
+  font-size: 30px;
+}
+
+.news-slider .slick-next {
+  right: 20px;
+  z-index: 1;
+}
+
+.news-slider .slick-prev {
+  left: 20px;
+  z-index: 1;
+}
+
+.news-slider .text-info-detail {
+  background-color: #A495C5;
+  padding: 25px;
+  color: #fff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-top: -10px;
+  margin-bottom: 0;
 }
 
 
+@media only screen and (max-width: 1400px) and (min-width: 991px) {
+  .w-22 {
+    width: 22%;
+  }
 
-@media (min-width: 1200px){
-.container, .container-lg, .container-md, .container-sm, .container-xl {
+  .w-56 {
+    width: 56%;
+  }
+}
+
+
+@media (min-width: 1200px) {
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
     max-width: 95% !important;
-}
-}
-@media (min-width: 1600px){
-  .container, .container-lg, .container-md, .container-sm, .container-xl {
-      max-width: 90% !important;
   }
+}
+
+@media (min-width: 1600px) {
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 90% !important;
   }
+}
