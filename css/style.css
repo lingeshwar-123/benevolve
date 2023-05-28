@@ -17,7 +17,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
+.heading-all-article{
+  font-size: 18px;
+  font-weight: 700;
+  color: #7663a5;
+  margin-bottom: 0px;
+}
 @keyframes spin {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -36,13 +41,51 @@
   right: 0;
   left: 0;
   top: 60px;
-  border-radius: 4px;
-  padding: 15px;
+  border-radius: 15px;
+  padding: 15px 25px;
   min-height: 130px;
+  box-shadow: 0 100vw 0 100vw #59595975, 0 5px 5px #59595975;
+  z-index: 1;
 }
+.search-dropdown .title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #7663a5;
+  margin-bottom: 0px;
+}
+.search-dropdown .text-label{
+  font-size: 16px;
+  font-weight: 400;
+  color: #7663a5;
+  margin-top: 15px;
+}
+.person-info{ 
+  background: #F5F7F7;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+}
+
+.person-info .text-name{
+  font-weight: 400;
+font-size: 18px;
+line-height: 30px;
+color: #7663A5;
+margin-bottom: 0;
+padding-left: 10px;
+}
+.person-info .text-position{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;  
+  color: #ABABAB;
+  padding-left: 10px;
+}
+/* search dropdown */
 body {
   background-color: #f5f7f7 !important;
   font-family: 'Poppins', sans-serif !important;
+  padding-bottom: 20px;
 }
 
 .f-AI {
@@ -406,6 +449,8 @@ body {
   color: rgba(30, 30, 30, 0.49);
   font-size: 18px;
   font-weight: 400;
+  padding-top: 15px;
+  padding-left: 75px;
 }
 
 .card-wrapper {
@@ -1188,7 +1233,8 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 30px;
-  color: rgba(30, 30, 30, 0.49);
+    color: rgba(0, 0, 0, 0.37);
+  
 }
 
 .news-container .news-div-right {
